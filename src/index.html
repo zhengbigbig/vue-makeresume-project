@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线简历制作工具</title>
+</head>
+<body>
+<div class="page" id="app">
+    <div v-show="loginVisable"  class="login" v-cloak>
+        <div class="loginBar">
+            <div class="login-inner">登录</div>
+            <form action="" @submit.prevent="onLogin">
+                <label for="">用户名&nbsp:&nbsp</label><input type="text" placeholder="请输入用户名" v-model="Login.email">
+                <label for="">密码&nbsp:&nbsp</label><input type="password" placeholder="请输入密码" v-model="Login.password">
+                <button type="submit" >提交</button>
+                <button type="button" @click="loginVisable=false;signUpVisible = true">注册</button>
+            </form>
+            <div class="actions">
+                <button type="button" @click="loginVisable = false">关闭</button>
+            </div>
+        </div>
+    </div>
+    <div v-show="signUpVisible"  class="login" v-cloak>
+        <div class="loginBar">
+            <div class="login-inner">注册</div>
+            <form action="" @submit.prevent="onSignUp">
+                <label for="">邮箱&nbsp:&nbsp</label><input type="text" placeholder="请输入邮箱" v-model="signUp.email">
+                <label for="">密码&nbsp:&nbsp</label><input type="password" placeholder="请输入密码" v-model="signUp.password">
+                <label for="">确认密码&nbsp:&nbsp</label><input type="password" placeholder="重复输入密码" v-model="signUp.password1">
+                <button type="submit" >提交</button>
+                <button type="button" @click="loginVisable=true;signUpVisible = false">登录</button>
+            </form>
+            <div class="actions">
+                <button type="button" @click="loginVisable = false">关闭</button>
+            </div>
+        </div>
+    </div>
+
+
+    <aside>
+        <header>
+            <div @click="save" class="download">
+                <span>保存</span>
+                <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-Shape"></use>
+                </svg>
+            </span>
+            </div>
+        </header>
+        <ul>
+            <li class="template">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-moban"></use>
+                </svg>
+            </span>
+                <span>模板管理</span>
+            </li>
+            <li class="template">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-moban1"></use>
+                </svg>
+            </span>
+                <span>更换模板</span>
+            </li>
+            <li class="template">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-fengge-"></use>
+                </svg>
+            </span>
+                <span>风格设置</span>
+            </li>
+            <li class="template">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-daochu"></use>
+                </svg>
+            </span>
+                <span>导入简历</span>
+            </li>
+            <li class="template" @click="getResume">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-wode_1-copy"></use>
+                </svg>
+            </span>
+                <span>我的简历</span>
+            </li>
+            <li class="template">
+            <span>
+                <svg class="icon" aria-hidden="true">
+                     <use xlink:href="#icon-lishi"></use>
+                </svg>
+            </span>
+                <span>操作历史</span>
+            </li>
+        </ul>
+        <footer>
+            <div @click="loginOut" class="loginOut" v-show="hasLogin()">
+                <span>登出</span>
+                <span>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dengchu"></use>
+                </svg>
+            </span>
+            </div>
+        </footer>
+        <div class="toggle">
+            <span>切换手机简历</span>
+            <span>选择条</span>
+        </div>
+    </aside>
+    <main>
+        <p>用户：{{currentUser.email}}</p>
+        <div class="resume">
+            <div class="topBar">
+                <div class="topBar-left">
+                    <h1><editable-span v-bind:value="resume.name" v-on:edit="onEdit('name',$event)"></editable-span></h1>
+                    <p><editable-span v-bind:value="resume.introduce" v-on:edit="onEdit('introduce',$event)"></editable-span></p>
+                    <p>
+                        <editable-span v-bind:value="resume.birthday" v-on:edit="onEdit('birthday',$event)"></editable-span>
+                        | <editable-span v-bind:value="resume.jobTitle" v-on:edit="onEdit('jobTitle',$event)"></editable-span>
+                        | <editable-span v-bind:value="resume.phone" v-on:edit="onEdit('phone',$event)"></editable-span>
+                        | <editable-span v-bind:value="resume.email" v-on:edit="onEdit('email',$event)"></editable-span>
+                        |
+                    </p>
+                </div>
+                <div class="topBar-right">
+                    <img src="" alt="个人图片">
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <div>求职意向</div>
+                        <div>
+                            <text-span v-bind:value="resume.message1" v-on:edit="onEdit('message1',$event)"></text-span>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div>教育背景</div>
+                        <div class="teachBack">
+                            <div v-for="mes,index in resume.message2" style="position: relative;border:1px solid #589BF7;margin-left:0;">
+                                <text-span v-bind:value="mes.mes1" v-on:edit="onEdit(`skills[${index}].mes1`,$event)"></text-span>
+                                <span class="dele" @click="removeMessage2" v-if="index > 0">删除</span>
+                            </div>
+                        </div>
+                        <span class="add" @click="addMessage2">添加</span>
+                    </li>
+                    <li>
+                        <div>工作经验</div>
+                        <div><text-span v-bind:value="resume.message3" v-on:edit="onEdit('message3',$event)"></text-span></div>
+                    </li>
+                    <li>
+                        <div>技能特长</div>
+                        <div><text-span v-bind:value="resume.message4" v-on:edit="onEdit('message4',$event)"></text-span></div>
+                    </li>
+                    <li>
+                        <div>兴趣爱好</div>
+                        <div><text-span v-bind:value="resume.message5" v-on:edit="onEdit('message5',$event)"></text-span></div>
+                    </li>
+                    <li>
+                        <div>自我评价</div>
+                        <div><text-span v-bind:value="resume.message6" v-on:edit="onEdit('message6',$event)"></text-span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../vendors/vue.min.js"></script>
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="css/login.css">
+<script src="../vendors/av-min.js"></script>
+<script src="//at.alicdn.com/t/font_778373_fezo7g4jk3.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
