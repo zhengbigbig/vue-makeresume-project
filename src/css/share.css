@@ -1,0 +1,34 @@
+.page .shareResume {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.page .shareResume .share {
+    min-width: 300px;
+    min-height: 200px;
+    border: 1px solid black;
+    background-color: #85a7ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.page .shareResume .share button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.page .shareResume .share textarea {
+    min-width: 600px;
+    resize: none;
+    cursor: pointer;
+}

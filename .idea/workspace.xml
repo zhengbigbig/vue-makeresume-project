@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea86c1f9-38ec-42de-9c53-d1fcb3a6a142" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/package-lock.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/img/image1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/vendors/av-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/vendors/vue.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/vue-resume-1" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/vue-makeresume-project/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/index.html" afterPath="$PROJECT_DIR$/vue-makeresume-project/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" afterPath="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,26 +29,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/index.html">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="27">
+              <caret line="100" column="19" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="205" column="42" lean-forward="false" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
-              <folding>
-                <marker date="1534382226702" expanded="true" signature="251:484" ph="..." />
-                <marker date="1534382226702" expanded="true" signature="808:1121" ph="..." />
-                <marker date="1534382226702" expanded="false" signature="1046:1105" ph="..." />
-                <marker date="1534382226702" expanded="true" signature="1106:1115" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -143,7 +136,7 @@
       <workItem from="1534149368350" duration="17216000" />
       <workItem from="1534303174038" duration="3748000" />
       <workItem from="1534380995496" duration="379000" />
-      <workItem from="1534381422093" duration="1028000" />
+      <workItem from="1534381422093" duration="1368000" />
     </task>
     <task id="LOCAL-00001" summary="更新内容">
       <created>1533803621726</created>
@@ -170,7 +163,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30191000" />
+    <option name="totallyTimeSpent" value="30531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="377" y="88" width="1505" height="949" extended-state="0" />
@@ -248,14 +241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/share.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -268,19 +253,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="205" column="42" lean-forward="false" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
-          <folding>
-            <marker date="1534382226702" expanded="true" signature="251:484" ph="..." />
-            <marker date="1534382226702" expanded="true" signature="808:1121" ph="..." />
-            <marker date="1534382226702" expanded="false" signature="1046:1105" ph="..." />
-            <marker date="1534382226702" expanded="true" signature="1106:1115" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="540">
+          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="100" column="19" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
           <folding />
         </state>
       </provider>
