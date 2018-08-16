@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea86c1f9-38ec-42de-9c53-d1fcb3a6a142" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/.idea/jsLibraryMappings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/.idea/vue-resume-1.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/package-lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/img/image1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/src/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/vendors/av-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-resume-1/vendors/vue.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue-makeresume-project/vue-resume-1" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/vue-makeresume-project/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/index.html" afterPath="$PROJECT_DIR$/vue-makeresume-project/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" afterPath="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +21,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.html">
+        <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="205" column="42" lean-forward="false" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
+              <folding>
+                <marker date="1534382226702" expanded="true" signature="251:484" ph="..." />
+                <marker date="1534382226702" expanded="true" signature="808:1121" ph="..." />
+                <marker date="1534382226702" expanded="false" signature="1046:1105" ph="..." />
+                <marker date="1534382226702" expanded="true" signature="1106:1115" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,7 +53,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue-resume-1" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue-makeresume-project" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,6 +61,8 @@
         <option value="$PROJECT_DIR$/vue-resume-1/src/js/app.js" />
         <option value="$PROJECT_DIR$/vue-resume-1/src/css/index.css" />
         <option value="$PROJECT_DIR$/vue-resume-1/src/index.html" />
+        <option value="$PROJECT_DIR$/vue-makeresume-project/src/js/app.js" />
+        <option value="$PROJECT_DIR$/vue-makeresume-project/src/index.html" />
       </list>
     </option>
   </component>
@@ -76,18 +84,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="187" />
-    <option name="y" value="57" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="377" />
+    <option name="y" value="88" />
     <option name="width" value="1505" />
     <option name="height" value="949" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -100,38 +105,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="project-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-self" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-self" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-resume-1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-self" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-resume-1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-self" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-resume-1" type="462c0819:PsiDirectoryNode" />
-              <item name="vendors" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
@@ -167,7 +141,9 @@
       <workItem from="1533803564612" duration="89000" />
       <workItem from="1533868087229" duration="7731000" />
       <workItem from="1534149368350" duration="17216000" />
-      <workItem from="1534303174038" duration="3493000" />
+      <workItem from="1534303174038" duration="3748000" />
+      <workItem from="1534380995496" duration="379000" />
+      <workItem from="1534381422093" duration="1028000" />
     </task>
     <task id="LOCAL-00001" summary="更新内容">
       <created>1533803621726</created>
@@ -183,19 +159,26 @@
       <option name="project" value="LOCAL" />
       <updated>1534310642974</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加技能模块">
+      <created>1534311031674</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534311031674</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28529000" />
+    <option name="totallyTimeSpent" value="30191000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="187" y="57" width="1505" height="949" extended-state="1" />
+    <frame x="377" y="88" width="1505" height="949" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -227,50 +210,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6723">
-          <caret line="249" column="20" lean-forward="false" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4725">
-          <caret line="175" column="48" lean-forward="true" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="175" column="48" lean-forward="false" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="246" column="1" lean-forward="false" selection-start-line="246" selection-start-column="1" selection-end-line="246" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -279,6 +230,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/index.html" />
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/vue-resume-1/src/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/share.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="205" column="42" lean-forward="false" selection-start-line="205" selection-start-column="42" selection-end-line="205" selection-end-column="42" />
+          <folding>
+            <marker date="1534382226702" expanded="true" signature="251:484" ph="..." />
+            <marker date="1534382226702" expanded="true" signature="808:1121" ph="..." />
+            <marker date="1534382226702" expanded="false" signature="1046:1105" ph="..." />
+            <marker date="1534382226702" expanded="true" signature="1106:1115" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-makeresume-project/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
           <folding />
         </state>
       </provider>
