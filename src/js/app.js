@@ -6,12 +6,12 @@ AV.init({
     appKey: APP_KEY
 });
 Vue.component('editable-span', {
-    props: ['value'],
+    props: ['value','disabled'],
     template: `
         <span class="editableSpan">
             <span v-show="!editing">{{value}}</span>
             <input v-show="editing" type="text" v-bind:value="value" @input ="triggerEdit">
-            <button @click="editing=!editing" type="button">编辑</button>
+            <button v-if="!disabled" @click="editing=!editing" type="button">编辑</button>
         </span>`,
     data() {
         return {
@@ -26,11 +26,11 @@ Vue.component('editable-span', {
     }
 })
 Vue.component('text-span', {
-    props: ['value'],
+    props: ['value','disabled'],
     template: `
         <div class="editableSpan">
             <span v-show="!editing">{{value}}</span>
-            <button @click="editing=!editing" type="button">编辑</button>
+            <button v-if="!disabled" @click="editing=!editing" type="button">编辑</button>
             <textarea v-show="editing" cols="30" rows="10"   v-bind:value="value" @input ="triggerEdit" style=" width:100%;overflow:auto;word-break:break-all;resize: none">
         </div>`,
     data() {
@@ -52,6 +52,7 @@ var app = new Vue({
         loginVisable:false,
         signUpVisible :false,
         shareResume:false,
+        templateChange:false,
         currentUser:{
             objcetId:undefined,
             email:''
@@ -80,7 +81,43 @@ var app = new Vue({
             password:'',
             password1:''
         },
-        shareLink:''
+        shareLink:'',
+        previewResume:{
+            name: '姓名',
+            introduce: '一句话介绍自己，告诉HR为什么选择你而不是别人',
+            birthday: '1990年1月',
+            jobTitle: '前端工程师',
+            phone: '132XXXXXXXX',
+            email: 'example@example.com',
+            message1: '请编辑内容',
+            message2:[{mes1:'请编辑内容'}],
+            message3: '请编辑内容',
+            message4: '请编辑内容',
+            message5: '请编辑内容',
+            message6: '请编辑内容',
+        },
+        mode:'edit', // 'preview'
+    },
+    computed:{
+        displayResume(){
+            console.log('代码执行了')
+            console.log(this.resume)
+            return this.mode === 'preview' ? this.previewResume : this.resume
+        }
+    },
+    watch:{
+        'currentUser.objectId' : function (newV,oldV){
+            if(newV){
+                console.log(newV)
+                console.log('ID变化了')
+                this.getResume(this.currentUser)
+            }else{
+                this.resume = this.previewResume
+            }
+        },
+        'resume' : function (newV,oldV) {
+            console.log(this.resume)
+        }
     },
     methods: {
         onEdit(key, value) {
@@ -136,6 +173,9 @@ var app = new Vue({
         onLogin(){
             AV.User.logIn(this.Login.email, this.Login.password).then((user)=>{
                 alert('登录成功')
+                let currentUser = AV.User.current()
+                this.currentUser = currentUser.toJSON()
+                this.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
                 this.loginVisable = false
                 this.signUpVisible = false
                 user = user.toJSON()
@@ -143,7 +183,10 @@ var app = new Vue({
                 console.log(user)
                 this.currentUser.objcetId = user.objectId
                 this.currentUser.email = user.email
-                this.getResume()
+                console.log(user.resume)
+
+                this.resume = user.resume
+                console.log(this.resume)
             }, (error)=>{
                 alert('登录失败，请检查用户名密码是否正确')
             });
@@ -166,26 +209,31 @@ var app = new Vue({
             AV.User.logOut();
             var currentUser = AV.User.current();
             alert('注销成功')
-            this.currentUser.objcetId = undefined
+            console.log(currentUser)
+            this.currentUser.objectId = undefined
             this.currentUser.email = ''
 
         },
-        getResume(){
+        getResume(user){
+            let query = new AV.Query('User');
+            return query.get(user.objectId).then((user)=> {
+                let resume = user.toJSON().resume
+                return resume
+
+            })
+
+        },
+        myResume(){
             let currentUser = AV.User.current()
             if (!currentUser) {
                 // 跳转到首页
                 this.loginVisable = true
                 console.log('当前没有用户？？？')
-            }
-            else {
+            }else{
                 let query = new AV.Query('User');
-                console.log(this.currentUser.objectId)
                 query.get(this.currentUser.objectId).then((user)=> {
-                    console.log(user.toJSON());
                     this.resume = user.toJSON().resume
-                }, function (error) {
-                    // 异常处理
-                });
+                })
             }
         },
         shareResume (){
@@ -196,15 +244,43 @@ var app = new Vue({
         },
         removeMessage2(index){
             this.resume.message2.splice(index,1)
+        },
+        printResume(){
+            window.print()
         }
 
     }
 })
+//获取当前用户
 let currentUser = AV.User.current()
 if(currentUser){
     app.currentUser = currentUser.toJSON()
-    console.dir(app.currentUser.objectId);
     app.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
+    console.log('currentUser'+ app.currentUser.objectId)
+    app.mode = 'edit'
+    app.getResume(app.currentUser).then((resume)=>{
+        app.resume = resume
+    })
+    console.log(app.mode)
 }else {
     console.log('???')
+    app.mode = 'preview'
+}
+
+//获取预览用户的ID
+let search = location.search
+console.log(search)
+let regex = /user_id=([^&]+)/
+let matches = search.match(regex)
+let userId
+if(matches){
+    userId = matches[1]
+    console.log('previewResume'+ userId)
+    app.mode = 'preview'
+    app.getResume({objectId:userId}).then((resume)=>{
+        app.previewResume = resume
+    })
+    console.log(app.mode)
+}else{
+    app.mode = 'edit'
 }

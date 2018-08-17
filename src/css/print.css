@@ -1,0 +1,14 @@
+.page > aside{
+    display: none;
+}
+.page > main{
+    height:100vh;
+    overflow: hidden;
+
+}
+.page button{
+    display: none;
+}
+.page .add{
+    display: none;
+}
