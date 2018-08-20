@@ -97,6 +97,7 @@ var app = new Vue({
             message6: '请编辑内容',
         },
         mode:'edit', // 'preview'
+        mainClass:'default'
     },
     computed:{
         displayResume(){
@@ -247,6 +248,9 @@ var app = new Vue({
         },
         printResume(){
             window.print()
+        },
+        setTheme(name){
+            this.mainClass = name
         }
 
     }

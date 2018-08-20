@@ -1,0 +1,22 @@
+.templateChange{
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.templateChange .templateChange-inner{
+    width:100px;
+    height:50px;
+    border:1px solid #172d65;
+    background: rgba(0,0,0,.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.templateChange .templateChange-inner span{
+    border:1px solid royalblue;
+    background: #85a7ec;
+}
