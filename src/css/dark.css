@@ -1,0 +1,170 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft yahei";
+}
+
+li {
+    list-style: none
+}
+
+div[v-cloak]{
+    display: none;
+}
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.page main.dark.dark {
+    flex: 1;
+    min-width: 820px;
+    background: linear-gradient(to right, rgba(0,0,0, 1) 0%, rgba(0,0,0, .8) 100%);
+    height: 100vh;
+    overflow: auto;
+}
+
+.page main.dark .resume {
+    width: 820px;
+    margin: 36px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0, .8);
+}
+
+.page main.dark .resume .topBar {
+    width: inherit;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page main.dark .resume .topBar .topBar-left {
+    float: left;
+    width: 550px;
+    height: 154px;
+    margin: 34px 0 30px 60px;
+    position: relative;
+    z-index: 1;
+}
+.page main.dark .resume .topBar .topBar-left h1 editable-span input{
+    font-size:inherit;
+    height:42px;
+
+}
+.page main.dark .resume .topBar .topBar-left p {
+    padding:5px 0;
+}
+.page main.dark .resume .topBar .topBar-left p editable-span{
+
+}
+.page main.dark .resume .topBar .topBar-left::before {
+    content: '';
+    background: url(../img/image1.png) no-repeat;
+    background-size: 620px 172px;
+    position: absolute;
+    z-index: -1;
+    top: -19px;
+    left: -61px;
+    width: 620px;
+    height: 172px;
+}
+
+.page main.dark .resume .topBar .topBar-right {
+    width: 130px;
+    height: 156px;
+    border: 4px solid #E5E5E5;
+    margin: auto auto;
+    overflow: hidden;
+}
+
+.page main.dark .resume .topBar .topBar-right img {
+    width: 130px;
+    height: 156px;
+}
+
+.page main.dark .resume .topBar .line {
+    width: 763px;
+    height: 4px;
+    background-color: rgba(0,0,0, .8);
+    margin-left: 30px;
+}
+
+.page main.dark .resume .content {
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.page main.dark .resume .content ul {
+    margin:50px 0 30px 0;
+}
+
+.page main.dark .resume .content ul li {
+    margin-left: 30px;
+    display: flex;
+    position: relative;
+}
+
+.page main.dark .resume .content ul li div:nth-child(1) {
+    font-size: 18px;
+    color:rgba(0,0,0, .8);
+    font-weight: bolder;
+}
+
+.page main.dark .resume .content ul li div:nth-child(2) {
+    border: 1px solid white;
+    border-right-color: transparent;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:602px;
+}
+.page main.dark .resume .content ul .teachBack-wrapper div {
+    border: 1px solid white;
+    border-right-color: transparent;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:602px;
+}
+.page main.dark .resume .content ul li div:nth-child(2) div{
+    width: 602px;
+    height: 115px;
+}
+.page main.dark .resume .content ul li .dele,
+.page main.dark .resume .content ul li .add
+{
+    border: 1px solid black;
+    width:3em;
+    height:20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.page main.dark .resume .content ul li .dele{
+    position: absolute;
+    top:0;
+    right:40px;
+}
+.page main.dark .resume .content ul li .add{
+    position: absolute;
+    top:0;
+    right:0;
+}

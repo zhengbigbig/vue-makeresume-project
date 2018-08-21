@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/print.css" media="print">
     <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/dark.css">
 </head>
 <body>
 <div class="page" id="app">
@@ -99,16 +100,16 @@
         </div>
     </aside>
     <main :class="mainClass">
-        <div class="resume">
+        <div class="resume" >
             <div class="topBar">
                 <div class="topBar-left">
-                    <h1><editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.name" v-on:edit="onEdit('name',$event)"></editable-span :disabled="mode === 'preview'"></h1>
-                    <p><editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.introduce" v-on:edit="onEdit('introduce',$event)"></editable-span :disabled="mode === 'preview'"></p>
+                    <h1><editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.name" v-on:edit="onEdit('name',$event)"></editable-span></h1>
+                    <p><editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.introduce" v-on:edit="onEdit('introduce',$event)"></editable-span></p>
                     <p>
-                        <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.birthday" v-on:edit="onEdit('birthday',$event)"></editable-span :disabled="mode === 'preview'">
-                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.jobTitle" v-on:edit="onEdit('jobTitle',$event)"></editable-span :disabled="mode === 'preview'">
-                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.phone" v-on:edit="onEdit('phone',$event)"></editable-span :disabled="mode === 'preview'">
-                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.email" v-on:edit="onEdit('email',$event)"></editable-span :disabled="mode === 'preview'">
+                        <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.birthday" v-on:edit="onEdit('birthday',$event)"></editable-span>
+                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.jobTitle" v-on:edit="onEdit('jobTitle',$event)"></editable-span>
+                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.phone" v-on:edit="onEdit('phone',$event)"></editable-span>
+                        | <editable-span :disabled="mode === 'preview'" v-bind:value="displayResume.email" v-on:edit="onEdit('email',$event)"></editable-span>
                         |
                     </p>
                 </div>
@@ -122,14 +123,14 @@
                     <li>
                         <div>求职意向</div>
                         <div>
-                            <text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message1" v-on:edit="onEdit('message1',$event)"></text-span :disabled="mode === 'preview'" >
+                            <text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message1" v-on:edit="onEdit('message1',$event)"></text-span>
                         </div>
                     </li>
                     <li>
                         <div>教育背景</div>
                         <div class="teachBack">
                             <div v-for="mes,index in displayResume.message2" style="position: relative;border:1px solid #589BF7;margin-left:0;">
-                                <text-span :disabled="mode === 'preview'"  v-bind:value="mes.mes1" v-on:edit="onEdit(`skills[${index}].mes1`,$event)"></text-span :disabled="mode === 'preview'" >
+                                <text-span :disabled="mode === 'preview'"  v-bind:value="mes.mes1" v-on:edit="onEdit(`skills[${index}].mes1`,$event)"></text-span>
                                 <span class="dele"  v-show="mode === 'edit'" @click="removeMessage2" v-if="index > 0">删除</span>
                             </div>
                         </div>
@@ -137,74 +138,36 @@
                     </li>
                     <li>
                         <div>工作经验</div>
-                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message3" v-on:edit="onEdit('message3',$event)"></text-span :disabled="mode === 'preview'" ></div>
+                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message3" v-on:edit="onEdit('message3',$event)"></text-span></div>
                     </li>
                     <li>
                         <div>技能特长</div>
-                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message4" v-on:edit="onEdit('message4',$event)"></text-span :disabled="mode === 'preview'" ></div>
+                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message4" v-on:edit="onEdit('message4',$event)"></text-span></div>
                     </li>
                     <li>
                         <div>兴趣爱好</div>
-                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message5" v-on:edit="onEdit('message5',$event)"></text-span :disabled="mode === 'preview'" ></div>
+                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message5" v-on:edit="onEdit('message5',$event)"></text-span></div>
                     </li>
                     <li>
                         <div>自我评价</div>
-                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message6" v-on:edit="onEdit('message6',$event)"></text-span :disabled="mode === 'preview'" ></div>
+                        <div><text-span :disabled="mode === 'preview'"  v-bind:value="displayResume.message6" v-on:edit="onEdit('message6',$event)"></text-span></div>
                     </li>
                 </ul>
             </div>
         </div>
-
     </main>
-    <div class="shareResume" v-show="shareResume" v-cloak>
-        <div class="share">
-            <textarea readonly="readonly">{{shareLink}}</textarea>
-            <button @click="shareResume = false">关闭</button>
-        </div>
-    </div>
-    <div v-show="loginVisable"  class="login" v-cloak>
-        <div class="loginBar">
-            <div class="login-inner">登录</div>
-            <form action="" @submit.prevent="onLogin">
-                <label for="">用户名&nbsp:&nbsp</label><input type="text" placeholder="请输入用户名" v-model="Login.email">
-                <label for="">密码&nbsp:&nbsp</label><input type="password" placeholder="请输入密码" v-model="Login.password">
-                <button type="submit" >提交</button>
-                <button type="button" @click="loginVisable=false;signUpVisible = true">注册</button>
-            </form>
-            <div class="actions">
-                <button type="button" @click="loginVisable = false">关闭</button>
-            </div>
-        </div>
-    </div>
-    <div v-show="signUpVisible"  class="login" v-cloak>
-        <div class="loginBar">
-            <div class="login-inner">注册</div>
-            <form action="" @submit.prevent="onSignUp">
-                <label for="">邮箱&nbsp:&nbsp</label><input type="text" placeholder="请输入邮箱" v-model="signUp.email">
-                <label for="">密码&nbsp:&nbsp</label><input type="password" placeholder="请输入密码" v-model="signUp.password">
-                <label for="">确认密码&nbsp:&nbsp</label><input type="password" placeholder="重复输入密码" v-model="signUp.password1">
-                <button type="submit" >提交</button>
-                <button type="button" @click="loginVisable=true;signUpVisible = false">登录</button>
-            </form>
-            <div class="actions">
-                <button type="button" @click="loginVisable = false">关闭</button>
-            </div>
-        </div>
-    </div>
-    <div class="templateChange" v-show="templateChange">
-        <div class="templateChange-inner">
-            <span @click="setTheme('default')">默认</span>
-            <span @click="setTheme('dark')">黑色</span>
-        </div>
-    </div>
+    <skin-picker v-show="templateChange" @settheme="setTheme"></skin-picker>
+    <share :share-link="shareLink" @down="shareResume = false" v-show="shareResume"></share>
+    <sign-up v-show="signUpVisible" @login="loginVisable=true;signUpVisible = false;" @closer="signUpVisible=false" @loginup="signUpVisible = false;loginVisable = true"></sign-up>
+    <login v-show="loginVisable" @login="onLogin" @close="loginVisable = false" @signup="loginVisable=false;signUpVisible = true"></login>
 </div>
 <script src="../vendors/vue.min.js"></script>
 <script src="../vendors/av-min.js"></script>
 <script src="//at.alicdn.com/t/font_778373_6sz36p6iple.js"></script>
+<script src="js/login.js"></script>
+<script src="js/share.js"></script>
+<script src="js/signUp.js"></script>
+<script src="js/skinPicker.js"></script>
 <script src="js/app.js"></script>
-<!--<script src="js/login.js"></script>-->
-<!--<script src="js/share.js"></script>-->
-<!--<script src="js/signUp.js"></script>-->
-<!--<script src="js/skinPicker.js"></script>-->
 </body>
 </html>

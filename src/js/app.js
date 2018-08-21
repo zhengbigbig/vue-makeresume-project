@@ -40,6 +40,7 @@ Vue.component('text-span', {
     },
     methods: {
         triggerEdit(e) {
+            console.log(e)
             this.$emit('edit', e.target.value)
         }
     }
@@ -54,10 +55,10 @@ var app = new Vue({
         shareResume:false,
         templateChange:false,
         currentUser:{
-            objcetId:undefined,
+            objectId:undefined,
             email:''
         },
-        resume: {
+        resume:{
             name: '姓名',
             introduce: '一句话介绍自己，告诉HR为什么选择你而不是别人',
             birthday: '1990年1月',
@@ -70,16 +71,6 @@ var app = new Vue({
             message4: '请编辑内容',
             message5: '请编辑内容',
             message6: '请编辑内容',
-        },
-        signUp:{
-            email:'',
-            password:'',
-            password1:''
-        },
-        Login:{
-            email:'',
-            password:'',
-            password1:''
         },
         shareLink:'',
         previewResume:{
@@ -96,8 +87,17 @@ var app = new Vue({
             message5: '请编辑内容',
             message6: '请编辑内容',
         },
-        mode:'edit', // 'preview'
-        mainClass:'default'
+        mode:'edit',
+        mainClass:'default',
+        Login:{
+            email:'',
+            password:''
+        },
+        signUp:{
+            email:'',
+            password:'',
+            password1:''
+        }
     },
     computed:{
         displayResume(){
@@ -115,9 +115,6 @@ var app = new Vue({
             }else{
                 this.resume = this.previewResume
             }
-        },
-        'resume' : function (newV,oldV) {
-            console.log(this.resume)
         }
     },
     methods: {
@@ -134,6 +131,7 @@ var app = new Vue({
                 }
             }
             result = value
+            console.log(result)
 
         },
         hasLogin(){
@@ -150,51 +148,20 @@ var app = new Vue({
                 //currentUser 为空时，可打开用户注册界面…
             }
         },
-        onSignUp(){
-            if(this.signUp.password === this.signUp.password1){
-                // 新建 AVUser 对象实例
-                const user = new AV.User();
-                // 设置用户名
-                user.setUsername(this.signUp.email);
-                // 设置密码
-                user.setPassword(this.signUp.password);
-                // 设置邮箱
-                user.setEmail(this.signUp.email);
-                user.signUp().then((user)=> {
-                    alert('注册成功，请登录');
-                    this.signUpVisible = false
-                    this.loginVisable = true
-                }, function (error) {
-                    alert('此邮箱已被注册')
-                });
-            }else{
-                alert('俩次密码输入不一致')
-            }
-        },
-        onLogin(){
-            AV.User.logIn(this.Login.email, this.Login.password).then((user)=>{
-                alert('登录成功')
-                let currentUser = AV.User.current()
-                this.currentUser = currentUser.toJSON()
-                this.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
-                this.loginVisable = false
-                this.signUpVisible = false
-                user = user.toJSON()
-                console.log(1)
-                console.log(user)
-                this.currentUser.objcetId = user.objectId
-                this.currentUser.email = user.email
-                console.log(user.resume)
-
-                this.resume = user.resume
-                console.log(this.resume)
-            }, (error)=>{
-                alert('登录失败，请检查用户名密码是否正确')
-            });
-
+        onLogin(user){
+            console.log(user)
+            // let currentUser = AV.User.current()
+            // this.currentUser = currentUser.toJSON()
+            // this.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
+            this.loginVisable = false
+            // this.signUpVisible = false
+            this.currentUser.objectId = user.objectId
+            this.currentUser.email = user.email
+            this.getResume(this.currentUser)
         },
         saveResume(){
             let {objectId} = AV.User.current().toJSON()
+            console.log({objectId})
             var user = AV.Object.createWithoutData('User',objectId);
             // 修改属性
             user.set('resume',this.resume);
@@ -218,9 +185,10 @@ var app = new Vue({
         getResume(user){
             let query = new AV.Query('User');
             return query.get(user.objectId).then((user)=> {
+                console.log(user)
                 let resume = user.toJSON().resume
+                console.log(resume)
                 return resume
-
             })
 
         },
